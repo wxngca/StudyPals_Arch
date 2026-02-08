@@ -97,11 +97,11 @@ def submit():
 def seed():
     existing_emails = {u.email for u in User.query.all()}
     samples = [
-        dict(username="Maya Brooks", email="maya@example.com", courses="COMP 101, MATH 240", day="Monday|Evening;Tuesday|Evening", time="multi", people=3),
-        dict(username="Jordan Lee", email="jordan@example.com", courses="COMP 202, MATH 240", day="Monday|Evening;Thursday|Afternoon", time="multi", people=3),
-        dict(username="Priya Patel", email="priya@example.com", courses="ECSE 201, MATH 240", day="Wednesday|Afternoon", time="multi", people=3),
-        dict(username="Luis Gomez", email="luis@example.com", courses="ECSE 200, COMP 202", day="Monday|Morning;Wednesday|Morning", time="multi", people=3),
-        dict(username="Zoe Kim", email="zoe@example.com", courses="COMP 273, COMP 250", day="Friday|Evening;Saturday|Evening", time="multi", people=3),
+        dict(username="Maya Brooks", email="maya@mail.com", courses="COMP 101, MATH 240", day="Monday|Evening;Tuesday|Evening", time="multi", people=3),
+        dict(username="Jordan Lee", email="jordan@mail.com", courses="COMP 202, MATH 240", day="Monday|Evening;Thursday|Afternoon", time="multi", people=3),
+        dict(username="Priya Patel", email="priya@mail.com", courses="ECSE 201, MATH 240", day="Wednesday|Afternoon", time="multi", people=3),
+        dict(username="Luis Gomez", email="luis@mail.com", courses="ECSE 200, COMP 202", day="Monday|Morning;Wednesday|Morning", time="multi", people=3),
+        dict(username="Zoe Kim", email="zoe@mail.com", courses="COMP 273, COMP 250", day="Friday|Evening;Saturday|Evening", time="multi", people=3),
     ]
 
     created = 0
