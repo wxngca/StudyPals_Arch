@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StudyPals Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body class="results-page">
+    <main class="page">
+      <section class="hero compact">
+        <span class="eyebrow">Your matches</span>
+        <h1>{{ user.username }}'s <span class="accent">study pals</span></h1>
+        <p><span class="pill">Courses</span> {{ user.courses }}</p>
+        <p class="meta">{{ user.availability_display() }}</p>
+      </section>
+
+      <section class="form-wrap">
+        <div class="form-card">
+          <div class="form-header">
+            <h2>Top <span class="accent">matches</span></h2>
+            <p>Based on shared courses and availability.</p>
+          </div>
+
+          {% if result %}
+            <ul class="results">
+              {% for match in result %}
+                <li>
+                  <div class="name">{{ match.username }}</div>
+                  <div class="badges">
+                    <span class="pill">Courses</span>
+                    <span class="pill light">{{ match.courses }}</span>
+                  </div>
+                  <div class="meta">{{ match.email }}</div>
+                  <div class="meta">{{ match.availability_display() }}</div>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="empty">No matches yet. Try adjusting your courses or time.</p>
+          {% endif %}
+
+          <div class="results-actions">
+            <a class="ghost link-button" href="{{ url_for('home') }}">Back to form</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.addEventListener("load", () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
+  </body>
+</html>
